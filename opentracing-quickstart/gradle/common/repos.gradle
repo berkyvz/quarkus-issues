@@ -1,0 +1,9 @@
+// define how the dependencies are resolved
+repositories {
+    mavenLocal()  
+	maven {
+		url "http://nexus.eteration.com/repository/public/"
+	}
+	mavenCentral()
+}
+ext.repos = repositories

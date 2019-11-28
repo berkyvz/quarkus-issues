@@ -1,0 +1,7 @@
+ext {
+	sonarQubeVersion =  '2.7'
+	quarkusPluginVersion = '1.0.0.CR1'
+	quarkusPlatformArtifactId= 'quarkus-universe-bom'
+	quarkusPlatformVersion= '1.0.0.CR1'
+	quarkusPlatformGroupId= 'io.quarkus'
+}
