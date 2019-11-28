@@ -1,0 +1,7 @@
+apply from: 'gradle/common/ext.gradle'
+apply from: 'gradle/common/repos.gradle'
+
+ext.buildscriptDeps =  {
+  classpath "io.quarkus:quarkus-gradle-plugin:${quarkusPluginVersion}"
+}
+

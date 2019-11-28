@@ -1,0 +1,33 @@
+buildscript {
+	apply from: 'gradle/common/buildScript.gradle'
+    repositories.addAll(repos)
+
+	dependencies {
+        classpath "io.quarkus:quarkus-gradle-plugin:${quarkusPluginVersion}"
+		classpath("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:${sonarQubeVersion}")
+
+	}
+}
+
+
+apply from: 'gradle/common/base.gradle'
+
+
+dependencies {
+    implementation 'io.quarkus:quarkus-resteasy'
+    implementation 'io.quarkus:quarkus-rest-client'
+    implementation 'io.quarkus:quarkus-elytron-security-oauth2'
+
+    implementation 'io.quarkus:quarkus-resteasy-jsonb'
+    
+    implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
+
+
+    testImplementation 'io.quarkus:quarkus-junit5'
+    testImplementation 'io.rest-assured:rest-assured'
+
+}
+
+compileJava {
+    options.compilerArgs << '-parameters'
+}
